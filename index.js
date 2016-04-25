@@ -1,6 +1,7 @@
 $.getJSON('topspots.json', function(data){
-	console.log('success');
 	$.each(data, function(i, spots){
-		$('table').append('<tr><td>'+spots.name+'</td><td>'+spots.description+'</td><td>'+spots.location+'</td></tr>');
+		var myLink = "<a href=https://www.google.com/maps?q=" + spots.location + ">Location</a>"
+		$('table').append('<tr><td>' + spots.name + '</td><td>' + spots.description + '</td><td>'+ myLink +'</td></tr>');
 	})
 });
+
